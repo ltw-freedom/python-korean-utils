@@ -1,9 +1,9 @@
+import webbrowser
 
 def second_to_hour_minute_second(second):
     minute, second = divmod(second, 60)
     hour, minute = divmod(minute, 60)
     return hour, minute, second
-
 
 def korean_hour_minute_second(second):
     hour, minute, second = second_to_hour_minute_second(second)
@@ -15,3 +15,6 @@ def korean_hour_minute_second(second):
     if hour != 0:
         string = str(hour)+'시간'+string
     return string
+
+def callback(url):
+    webbrowser.open_new(url)
